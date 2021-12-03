@@ -1,0 +1,89 @@
+<html>
+
+<h1>Page 3:How to build a chat application using react and node.js</h1>
+
+<h2>This tutorial assumes you have node.js and react installed</h2>
+<ol>
+ 
+  Part 1: Creating all required files
+  <br>
+  <li>Create and save a file as index.html </li>
+  <li>Copy and paste the following code into the index.html file</li>
+  <li>Create and save a file as chat.js</li>
+  <li>Copy and paste the following code into the file and save it</li>
+  <br>
+  var app = require('express')();<br>
+var http = require('http').Server(app);<br>
+var io = require('socket.io')(http);<br>
+
+const port = process.env.PORT || 3000<br>
+
+app.get('/', function(req, res){<br>
+   res.sendfile('index.html');<br>
+});<br>
+
+
+
+io.on('connection', function(socket){<br>
+	
+   socket.on('msg', function(msg){<br>
+     
+      io.sockets.emit('newmsg', msg);<br>
+   });<br>
+});<br>
+
+http.listen(port, function(){<br>
+   console.log('listening on '+port);<br>
+});<br>
+<br>
+  <li>Create and save a file as package.json </li>
+  <li>Copy and paste the following code into the package.json file</li>
+  <br>
+  {<br>
+  "name": "user",<br>
+  "version": "1.0.0",<br>
+  "description": "",<br>
+  "main": ".mongorc.js",<br>
+  "dependencies": {<br>
+    "express": "^4.17.1",<br>
+    "formidable": "^1.2.2",<br>
+    "fs": "^0.0.1-security",<br>
+    "mongodb": "^3.6.1",<br>
+    "mongoose": "^5.10.3",<br>
+    "mysql": "^2.18.1",<br>
+    "nodemailer": "^6.4.11",<br>
+    "socket.io": "^2.4.1"<br>
+  },<br>
+  "devDependencies": {},<br>
+  "scripts": {<br>
+    "test": "echo \"Error: no test specified\" && exit 1",<br>
+    "start": "node server.js"<br>
+  },<br>
+  "author": "",<br>
+  "license": "ISC"<br>
+  <br>
+  <li>Create and save a file as Procfile.txt </li>
+  <li>Copy and paste the following code into the Procfile.txt file</li>
+  <br>
+  web: node chat.js<br>
+  <br>
+  Part 2: Preparing your github repository
+  <br>
+  <li>Create an account on github at https://github.com/</li>
+  <li>Login to your github account</li>
+  <li>Create a repository called "chat application"</li>
+  <li>Upload all the files you create in part 1 to that github repository</li>
+  <br>
+  Part 3: Hosting github repository code on cloud using heroku
+  <br>
+  <li>Create an account on heroku at https://www.heroku.com/</li>
+  <li>Login to your heroku account</li>
+  <li>Create a node.js buildpack</li>
+  <li>Create a new app with whatever name you choose</li>
+  <li>Navigate to the "deploy" section in your app dashboard </li>
+  <li>Connect the github repository you created in part 2 with your new heroku app</li>
+  <li>Click the button "Deploy Branch" to deploy your app to the cloud</li>
+  <li>Click the button "Open App" to view your app</li>
+</ol> 
+
+</html>

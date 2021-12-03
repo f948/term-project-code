@@ -1,0 +1,81 @@
+<html>
+
+<h1>Page 2:How to install React and Node.js</h1>
+
+
+
+<h2>How to install Node.js</h2>
+<ol>
+  <li>Go to the website https://nodejs.org/en/download/</li>
+  <li>Click on the button that downlaods the node install that is appropriate for your operating system version</li>
+  <li>Run the node installer when the downlaod finishes to install node.js on your device</li>
+</ol> 
+
+<h2>How to install additional node modules</h2>
+
+<ol>
+  <li>Open up the command prompt on your operating system</li>
+  <li>Navigate to the directory where node.js is installed</li>
+  <li>Type "npm install module name" into the command prompt and the node modules will be installed</li>
+  <li>Node: do not type npm install module name, intead make sure to replace module name with the actual module name.For example if I want to install express I would type in "npm install express" into the command prompt</li>
+  <li>The node modules should then be installed and ready for use</li>
+</ol> 
+
+<h2>How to run your first node.js application</h2>
+
+<ol>
+  <li>Copy and paste the following code into a text editor</li><br>
+   var http = require("http");<br>
+   
+http.createServer(function (request, response) {<br>
+   // Send the HTTP header <br>
+   // HTTP Status: 200 : OK<br>
+   // Content Type: text/plain<br>
+   response.writeHead(200, {'Content-Type': 'text/plain'});<br>
+   
+   // Send the response body as "Hello World"<br>
+   response.end('Hello World\n');<br>
+}).listen(3000);<br>
+
+   <li>Save the file as app.js in the same directory as node.js is installed</li>
+  <li>Open up the command prompt on your computer</li>
+  <li>Navigate to the directory where app.js file was installed</li>
+  <li>Type "node app.js" into the comamnd prompt</li>
+  <li>Open up your web browser</li>
+  <li>Type "http://localhost:3000/" into your web browser. A page should open up with the message "Hello world"</li>
+  
+</ol> 
+
+<h2>How to install React</h2>
+
+<ol>
+	<li>Open up the command prompt on your perating system</li>
+	<li>Navigate othte same directory where node was installed</li>
+	<li>Type "npm install -g create-react-app" into the prompt</li>
+	<li>After the command is executed type "npx create-react-app react-app" into the prompt. This will create a new project named react-app</li>
+	<li></li>
+</ol>
+
+<h2>Running the first react application</h2>
+
+<ol>
+	<li>Navigate into the react-app project folder and open up the App.js file inside the src folder</li>
+	<li>Copy and paste the following code into the App.js file</li><br>
+   import React from "react";<br>
+   
+class HelloWorld extends React.Component {<br>
+   render() {<br>
+      return (<br>
+         <div> <br>
+            <h1>Hello World!</h1> <br>
+         </div>  <br>
+      );<br>
+   }<br>
+}<br>
+export default HelloWorld;<br>
+
+	<li>Navigate to the project folder directory in teh command prompt</li>
+	<li>Type"npm start" to start running the react app</li>
+	<li>Type "http://localhost:3000/" into your web browser. A page should open up with the message "Hello world"</li>
+</ol>
+</html>
