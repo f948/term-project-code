@@ -4,10 +4,6 @@ var io = require('socket.io')(http);
 
 const port = process.env.PORT || 3000
 
-app.get('/dsfgjhjfgjh', function(req, res){
-   res.sendfile('CMN 300 Recommendation Report.pdf');
-});
-
 app.get('/page1.html', function(req, res){
    res.sendfile('CPS 530 Presentation Page 1 Presentation.pdf');
 });
